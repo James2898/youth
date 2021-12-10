@@ -20,18 +20,18 @@
                 <div>
                     <x-label for="fname" :value="__('Name')" />
     
-                    <input value="{{ $user->name  }}" type="text" name="name" id="idUserName" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" required>
+                    <input value="{{ $user->name  }}" type="text" name="name" id="idUserName" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" required disabled>
                 </div>
     
                 <div class="mt-4">
                     <x-label for="mname" :value="__('Code Name')" />
     
-                    <input value="{{ $user->code_name  }}" type="text" name="code_name" id="idUserName" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" required>
+                    <input value="{{ $user->code_name  }}" type="text" name="code_name" id="idUserName" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" required disabled>
                 </div>
     
                 <div class="mt-4">
                     <x-label for="name" :value="__('Gender')" />
-                    <select name="gender" id="idGender" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
+                    <select name="gender" id="idGender" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" disabled>
                         <option value="" disabled selected>
                             Select Gender
                         </option>
@@ -44,26 +44,26 @@
                 <div class="mt-4">
                     <x-label for="mname" :value="__('Wishlist')" />
     
-                    <input value="{{ $user->wishlist  }}" type="text" name="wishlist" id="idUserName" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" required>
+                    <input value="{{ $user->wishlist  }}" type="text" name="wishlist" id="idUserName" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" required disabled>
                 </div>
     
                 <div class="mt-4">
                     <x-label for="email" :value="__('Email')" />
     
-                    <input value="{{ $user->email }}" type="email" name="email" id="idUserEmail" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"  required>
+                    <input value="{{ $user->email }}" type="email" name="email" id="idUserEmail" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"  required disabled>
                 </div>
     
                 <div class="mt-4">
                     <x-label for="password" :value="__('Password')" />
     
-                    <input value="" type="text" name="password" id="idUserPassword" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" placeholder="Password will not be changed if empty">
+                    <input value="" type="text" name="password" id="idUserPassword" class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" placeholder="Password will not be changed if empty" disabled>
                 </div>
     
-                <div class="flex items-center justify-end mt-4">
+                {{-- <div class="flex items-center justify-end mt-4">
                     <x-button class="ml-3">
                         {{ __('Update') }}
                     </x-button>
-                </div>
+                </div> --}}
             </form>
         </div>
         </div>

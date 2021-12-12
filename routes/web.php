@@ -60,6 +60,15 @@ Route::get('/users', function () {
     return view('users',compact('users'));
 })->middleware(['auth'])->name('users');
 
+Route::get('/delete/{user_id}', function ($user_id) {
+    if(Auth::user()->id != 1) {
+        return redirect(route('dashboard'))->with('alert', 'GINAGAWA MO!');
+    }
+    $user = User::find($user_id)->delete();
+    $users = User::all();
+    return view('users',compact('users'));
+})->middleware(['auth'])->name('delete');
+
 Route::get('/shuffle',function(){
     if(Auth::user()->id != 1){
         return redirect(route('dashboard'))->with('alert', 'GINAGAWA MO!');
@@ -84,6 +93,19 @@ Route::get('/shuffle',function(){
     return redirect(route('users'));
 
 })->middleware(['auth'])->name('shuffle');
+
+Route::get('/removePartner', function () {
+    if(Auth::user()->id != 1) {
+        return redirect(route('dashboard'))->with('alert', 'GINAGAWA MO!');
+    }
+    $users = User::all();
+    foreach ($users as $user) {
+        $user->update([
+            'partner_id' => 0
+        ]);
+    }
+    return view('users',compact('users'));
+})->middleware(['auth'])->name('removePartner');
 
 function shuffle_assoc(&$array) {
     $keys = array_keys($array);

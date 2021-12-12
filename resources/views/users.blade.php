@@ -11,7 +11,7 @@
         <x-alert  />
     @endif
     <div class="mx-auto">
-    <h1 class="text-5xl font-bold leading-tight">Users</h1>
+    <h1 class="text-5xl font-bold leading-tight">Users: {{count($users)}}</h1>
     </div>
     <a href="{{ route('shuffle') }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150'">Shuffle</a>
     <a href="{{ route('removePartner') }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150'">Remove Partners </a>

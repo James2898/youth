@@ -20,7 +20,7 @@
         <thead>
             <tr class="bg-green-500 text-white uppercase text-sm leading-normal">
                 <th class="py-3 px-6 text-left">ID</th>
-                {{-- <th class="py-3 px-6 text-left">Name</th> --}}
+                <th class="py-3 px-6 text-left">Name</th>
                 <th class="py-3 px-6 text-left">Code</th>
                 <th class="py-3 px-6 text-left">Wishlist</th>
                 <th class="py-3 px-6 text-left">Partner</th>
@@ -33,9 +33,9 @@
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     {{$user->id}}
                 </td>
-                {{-- <td class="py-3 px-6 text-left whitespace-nowrap">
+                <td class="py-3 px-6 text-left whitespace-nowrap">
                     {{$user->name}}
-                </td> --}}
+                </td>
                 <td class="py-3 px-6 text-left">
                     {{$user->code_name}}
                 </td>
@@ -49,8 +49,13 @@
                         @else
                             <span class="bg-red-200 text-blacks-600 py-1 px-3 rounded-full text-xs">
                         @endif
-                            {{$user->partner_id}}
-                            </span>
+                        @foreach ($users as $partner)
+                            @if($partner->id == $user->partner_id)
+                                {{$partner->code_name}}
+                                @break
+                            @endif
+                        @endforeach
+                        </span>
                     @else
                     No partner yet
                     @endif

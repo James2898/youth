@@ -56,7 +56,7 @@ Route::get('/users', function () {
     if(Auth::user()->id != 1) {
         return redirect(route('dashboard'))->with('alert', 'GINAGAWA MO!');
     }
-    $users = User::all();
+    $users = User::orderBy('users.id')->get();
     return view('users',compact('users'));
 })->middleware(['auth'])->name('users');
 
